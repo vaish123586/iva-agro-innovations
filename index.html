@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IVA Agro Innovations | Fertilizers & Agricultural Products</title>
+  <meta name="description" content="IVA Agro Innovations - Fertilizers, crop nutrients and agricultural products. Find our shop, browse products and contact us.">
+  <meta name="keywords" content="IVA Agro Innovations, fertilizer shop, fertilizers, agricultural products, crop nutrients">
+  <meta name="author" content="IVA Agro Innovations Pvt. Ltd.">
+  <meta name="theme-color" content="#176b3a">
+  <meta property="og:title" content="IVA Agro Innovations">
+  <meta property="og:description" content="Your agricultural partner for fertilizers and crop solutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/iva-agro-logo.png">
+  <link rel="icon" href="assets/iva-agro-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "IVA Agro Innovations Pvt. Ltd.",
+    "description": "Fertilizer and agricultural products shop.",
+    "telephone": "+91 8688841015",
+    "email": "ivaagroinnovations@gmail.com",
+    "url": "https://ivaagroinnovations.in"
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <img src="assets/iva-agro-logo.png" alt="IVA Agro Innovations logo">
+      <span>IVA Agro Innovations</span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    <nav id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#location">Shop Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <span class="eyebrow">ALL YOUR AGRICULTURAL NEEDS</span>
+        <h1>Grow Better.<br><span>Harvest Better.</span></h1>
+        <p>Quality fertilizers and agricultural products for healthier crops and better farming results.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#products">Explore Products</a>
+          <a class="btn light" href="#location">Find Our Shop</a>
+        </div>
+        <div class="quick-contact">
+          <a href="tel:+918688841015">☎ +91 8688841015</a>
+          <a href="mailto:ivaagroinnovations@gmail.com">✉ ivaagroinnovations@gmail.com</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="assets/iva-agro-logo.png" alt="IVA Agro Innovations">
+        <h3>IVA Agro Innovations Pvt. Ltd.</h3>
+        <p>Your local agricultural partner.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stat-grid">
+      <div><strong>Quality</strong><span>Trusted agricultural products</span></div>
+      <div><strong>Value</strong><span>Products for every farming need</span></div>
+      <div><strong>Support</strong><span>Customer-focused service</span></div>
+    </div>
+  </section>
+
+  <section id="products" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">OUR PRODUCTS</span>
+        <h2>Products available at our shop</h2>
+        <p>Search and browse the products you are looking for.</p>
+      </div>
+      <div class="product-tools">
+        <input id="productSearch" type="search" placeholder="Search fertilizer or product..." oninput="filterProducts()">
+        <select id="categoryFilter" onchange="filterProducts()">
+          <option value="all">All categories</option>
+          <option value="Fertilizers">Fertilizers</option>
+          <option value="Micronutrients">Micronutrients</option>
+          <option value="Bio Products">Bio Products</option>
+          <option value="Crop Care">Crop Care</option>
+        </select>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+      <p id="noProducts" class="empty" hidden>No products match your search.</p>
+    </div>
+  </section>
+
+  <section id="about" class="section soft">
+    <div class="container two-col">
+      <div>
+        <span class="eyebrow">ABOUT IVA AGRO INNOVATIONS</span>
+        <h2>Helping farmers choose the right agricultural products.</h2>
+        <p>IVA Agro Innovations Pvt. Ltd. is focused on making quality agricultural inputs easier to find and purchase. Our shop is designed to serve farmers and agricultural customers with reliable products and helpful service.</p>
+        <p>Contact us to check product availability, pack sizes and current pricing before visiting.</p>
+      </div>
+      <div class="about-card">
+        <img src="assets/iva-agro-logo.png" alt="IVA Agro Innovations logo">
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">VISIT OUR SHOP</span>
+        <h2>Find IVA Agro Innovations</h2>
+        <p>Use Google Maps to locate the shop and get directions.</p>
+      </div>
+      <div class="location-card">
+        <div class="map-placeholder">
+          <div class="pin">⌖</div>
+          <h3>IVA Agro Innovations</h3>
+          <p>Search our shop on Google Maps.</p>
+          <a class="btn primary" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=IVA+Agro+Innovations">Open in Google Maps</a>
+        </div>
+        <div class="location-info">
+          <h3>Shop information</h3>
+          <p><strong>Business:</strong> IVA Agro Innovations Pvt. Ltd.</p>
+          <p><strong>Phone:</strong> <a href="tel:+918688841015">+91 8688841015</a></p>
+          <p><strong>Email:</strong> <a href="mailto:ivaagroinnovations@gmail.com">ivaagroinnovations@gmail.com</a></p>
+          <div class="notice">Add your exact shop address and Google Maps place link in this section before publishing.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="container contact-box">
+      <div>
+        <span class="eyebrow">CONTACT US</span>
+        <h2>Need a product or want to visit?</h2>
+        <p>Call or email us to check availability and get directions.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn primary" href="tel:+918688841015">Call Now</a>
+        <a class="btn whatsapp" target="_blank" rel="noopener" href="https://wa.me/918688841015?text=Hello%20IVA%20Agro%20Innovations%2C%20I%20would%20like%20to%20know%20about%20your%20products.">WhatsApp</a>
+        <a class="btn outline" href="mailto:ivaagroinnovations@gmail.com">Email Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <div class="footer-brand">
+      <img src="assets/iva-agro-logo.png" alt="">
+      <div><strong>IVA Agro Innovations Pvt. Ltd.</strong><span>All Your Agricultural Needs</span></div>
+    </div>
+    <div>© <span id="year"></span> IVA Agro Innovations. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
