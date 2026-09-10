@@ -10,7 +10,7 @@ Pages:
 Before publishing:
 1. Replace the Google Maps search link in contact.html with the exact shop/place link.
 2. Add the real social media profile URLs/handles when available.
-3. Confirm the phone/email.
+3. Confirm the phone/email. Current phone/WhatsApp: +91 8555098798. Email: ivaagroinnovations@gmail.com.
 4. Upload all files into the website root (for cPanel primary domain, normally public_html).
 5. Keep the directory structure intact.
 6. Submit sitemap.xml to Google Search Console after the domain is live.

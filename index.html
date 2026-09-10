@@ -18,7 +18,7 @@
   "@context":"https://schema.org",
   "@type":"LocalBusiness",
   "name":"IVA Agro Innovations Pvt. Ltd.",
-  "telephone":"+91 8688841015",
+  "telephone":"+91 8555098798",
   "email":"ivaagroinnovations@gmail.com",
   "url":"https://cultivat.in",
   "description":"Smart farming solutions, fertilizers and agricultural products."
@@ -47,6 +47,9 @@
 <section class="hero">
   <div class="hero-slide-bg"></div>
   <div class="container hero-content">
+    <div class="hero-visual hero-visual-large">
+      <img src="assets/catalog/catalog-01.jpg" alt="IVA Agro Innovations farmers and scientific solutions">
+    </div>
     <div class="hero-copy">
       <span class="eyebrow">SMART FARMING SOLUTIONS</span>
       <h1>From Farmers’ Trust<br><span>to Scientific Solutions.</span></h1>
@@ -55,14 +58,34 @@
         <a class="btn primary" href="products.html">Explore Products</a>
         <a class="btn light" href="contact.html">Contact & Location</a>
       </div>
-      <div class="quick-contact">
-        <a href="tel:+918688841015">☎ +91 8688841015</a>
-        <a href="mailto:ivaagroinnovations@gmail.com">✉ ivaagroinnovations@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<section class="home-products section green-section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">OUR PRODUCTS</span>
+      <h2>Explore Our Products</h2>
+      <p>Browse our agricultural product catalog. Products automatically slide every 2.5 seconds.</p>
+    </div>
+    <div class="catalog-slider" id="homeCatalogSlider">
+      <div class="slides">
+        <div class="slide"><img src="assets/catalog/catalog-04.jpg" alt="Plant IVA product information"></div>
+        <div class="slide"><img src="assets/catalog/catalog-05.jpg" alt="JIVA smart water management technology"></div>
+        <div class="slide"><img src="assets/catalog/catalog-06.jpg" alt="UREIVA smart nitrogen nutrition"></div>
+        <div class="slide"><img src="assets/catalog/catalog-07.jpg" alt="Complete nutrition product solutions"></div>
+        <div class="slide"><img src="assets/catalog/catalog-08.jpg" alt="Liquid potash and liquid zinc nutrient fertilizer"></div>
+        <div class="slide"><img src="assets/catalog/catalog-09.jpg" alt="IVAGEL water soluble gel fertilizers"></div>
+        <div class="slide"><img src="assets/catalog/catalog-10.jpg" alt="Imported biostimulants crop specific solutions and micronutrients"></div>
+        <div class="slide"><img src="assets/catalog/catalog-11.jpg" alt="Agriculture drones technology"></div>
+        <div class="slide"><img src="assets/catalog/catalog-12.jpg" alt="IVA Agro Innovations smart farming solutions"></div>
       </div>
+      <button class="slider-btn prev" onclick="homeMoveSlide(-1)" aria-label="Previous product">‹</button>
+      <button class="slider-btn next" onclick="homeMoveSlide(1)" aria-label="Next product">›</button>
+      <div class="dots" id="homeDots"></div>
     </div>
-    <div class="hero-visual">
-      <img src="assets/catalog/catalog-01.jpg" alt="IVA Agro Innovations farmers and scientific solutions">
-    </div>
+    <div class="center home-product-link"><a class="btn primary" href="products.html">View All Products →</a></div>
   </div>
 </section>
 
@@ -122,8 +145,8 @@
   <div class="container cta-inner">
     <div><span class="eyebrow">VISIT OR CONTACT US</span><h2>Looking for an agricultural product?</h2><p>Call, WhatsApp or email IVA Agro Innovations to check availability.</p></div>
     <div class="cta-actions">
-      <a class="btn primary" href="tel:+918688841015">Call Now</a>
-      <a class="btn whatsapp" href="https://wa.me/918688841015?text=Hello%20IVA%20Agro%20Innovations%2C%20I%20would%20like%20to%20know%20about%20your%20products." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn primary" href="tel:+918555098798">Call Now</a>
+      <a class="btn whatsapp" href="https://wa.me/918555098798?text=Hello%20IVA%20Agro%20Innovations%2C%20I%20would%20like%20to%20know%20about%20your%20products." target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn outline" href="contact.html">Shop Location</a>
     </div>
   </div>
@@ -136,6 +159,21 @@
     <div>© <span id="year"></span> IVA Agro Innovations</div>
   </div>
 </footer>
+<script>
+let homeCurrentSlide=0;
+const homeSlides=[...document.querySelectorAll('#homeCatalogSlider .slide')];
+const homeDots=document.getElementById('homeDots');
+homeSlides.forEach((_,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Go to product '+(i+1));b.onclick=()=>homeShowSlide(i);homeDots.appendChild(b);});
+function homeShowSlide(i){homeCurrentSlide=(i+homeSlides.length)%homeSlides.length;document.querySelector('#homeCatalogSlider .slides').style.transform=`translateX(-${homeCurrentSlide*100}%)`;[...homeDots.children].forEach((d,n)=>d.classList.toggle('active',n===homeCurrentSlide));}
+function homeMoveSlide(n){homeShowSlide(homeCurrentSlide+n);homeResetTimer();}
+let homeTimer=setInterval(()=>homeShowSlide(homeCurrentSlide+1),2500);
+function homeResetTimer(){clearInterval(homeTimer);homeTimer=setInterval(()=>homeShowSlide(homeCurrentSlide+1),2500);}
+homeShowSlide(0);
+const homeSlider=document.getElementById('homeCatalogSlider');
+homeSlider.addEventListener('mouseenter',()=>clearInterval(homeTimer));
+homeSlider.addEventListener('mouseleave',()=>{homeTimer=setInterval(()=>homeShowSlide(homeCurrentSlide+1),2500);});
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>
