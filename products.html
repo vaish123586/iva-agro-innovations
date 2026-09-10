@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | IVA Agro Innovations</title>
+<meta name="description" content="Explore the IVA Agro Innovations product catalog including Plant IVA, JIVA Smart Water Management, UREIVA, liquid potash, liquid zinc, gel fertilizers, biostimulants, crop-specific solutions, micronutrients and agriculture drones.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="assets/iva-agro-logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="assets/iva-agro-logo.png" alt="IVA Agro Innovations logo"><span>IVA Agro Innovations</span></a>
+    <button class="menu-btn" aria-label="Open navigation" onclick="toggleMenu()">☰</button>
+    <nav id="navLinks"><a href="index.html">Home</a><a class="active" href="products.html">Products</a><a href="index.html#about">About</a><a href="index.html#portfolio">Solutions</a><a href="contact.html">Contact</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="page-banner">
+  <div class="container">
+    <span class="eyebrow">IVA AGRO INNOVATIONS</span>
+    <h1>Products & Smart Farming Solutions</h1>
+    <p>Browse the catalog. The product pages automatically slide every 2.5 seconds.</p>
+  </div>
+</section>
+
+<section class="section products-section">
+  <div class="container">
+    <div class="catalog-slider" id="catalogSlider">
+      <div class="slides">
+        <div class="slide"><img src="assets/catalog/catalog-04.jpg" alt="Plant IVA product information"></div>
+        <div class="slide"><img src="assets/catalog/catalog-05.jpg" alt="JIVA smart water management technology"></div>
+        <div class="slide"><img src="assets/catalog/catalog-06.jpg" alt="UREIVA smart nitrogen nutrition"></div>
+        <div class="slide"><img src="assets/catalog/catalog-07.jpg" alt="Complete nutrition product solutions"></div>
+        <div class="slide"><img src="assets/catalog/catalog-08.jpg" alt="Liquid potash and liquid zinc nutrient fertilizer"></div>
+        <div class="slide"><img src="assets/catalog/catalog-09.jpg" alt="100 percent water soluble gel fertilizers"></div>
+        <div class="slide"><img src="assets/catalog/catalog-10.jpg" alt="Imported biostimulants crop specific solutions and micronutrients"></div>
+        <div class="slide"><img src="assets/catalog/catalog-11.jpg" alt="Agriculture drones technology"></div>
+        <div class="slide"><img src="assets/catalog/catalog-12.jpg" alt="Imported repacked marketed smart farming solutions"></div>
+      </div>
+      <button class="slider-btn prev" onclick="moveSlide(-1)" aria-label="Previous product">‹</button>
+      <button class="slider-btn next" onclick="moveSlide(1)" aria-label="Next product">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+
+    <div class="product-info-grid">
+      <article><h3>Plant IVA</h3><p>Mixed micronutrient & plant growth fertilizer. The catalog describes primary nutrients, secondary nutrients and organic carbon in one formulation.</p></article>
+      <article><h3>JIVA</h3><p>Advanced water-absorbing technology using potassium polyacrylate for water retention in the root zone.</p></article>
+      <article><h3>UREIVA</h3><p>Advanced nitrogen nutrition solution designed for vegetative growth, greener foliage and plant development.</p></article>
+      <article><h3>Liquid Potash & Zinc</h3><p>Liquid crop nutrition products featured for plant strength, flowering, fruit quality and zinc nutrition.</p></article>
+      <article><h3>IVAGEL Fertilizers</h3><p>Premium 100% water-soluble gel fertilizer range shown in the catalog.</p></article>
+      <article><h3>Biostimulants & Micronutrients</h3><p>Imported biostimulants, crop-specific solutions and micronutrients for crop growth and nutrient efficiency.</p></article>
+      <article><h3>Agriculture Drones</h3><p>Agriculture drone technology with sales support, training and after-sales service.</p></article>
+      <article><h3>Custom Solutions</h3><p>Technical support and crop advisory for farmer-focused solutions.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+ <div class="container cta-inner"><div><span class="eyebrow">CHECK AVAILABILITY</span><h2>Need a specific product?</h2><p>Contact us before visiting the shop for availability, pack size and current pricing.</p></div><div class="cta-actions"><a class="btn primary" href="tel:+918688841015">Call</a><a class="btn whatsapp" href="https://wa.me/918688841015" target="_blank" rel="noopener">WhatsApp</a><a class="btn outline" href="contact.html">Contact</a></div></div>
+</section>
+</main>
+<footer><div class="container footer"><div class="footer-brand"><img src="assets/iva-agro-logo.png" alt=""><div><strong>IVA Agro Innovations Pvt. Ltd.</strong><span>Smart Farming Solutions</span></div></div><div>© <span id="year"></span> IVA Agro Innovations</div></div></footer>
+<script src="script.js"></script>
+<script>
+let currentSlide=0;
+const slides=[...document.querySelectorAll('.slide')];
+const dots=document.getElementById('dots');
+slides.forEach((_,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Go to product '+(i+1));b.onclick=()=>showSlide(i);dots.appendChild(b);});
+function showSlide(i){currentSlide=(i+slides.length)%slides.length;document.querySelector('.slides').style.transform=`translateX(-${currentSlide*100}%)`;[...dots.children].forEach((d,n)=>d.classList.toggle('active',n===currentSlide));}
+function moveSlide(n){showSlide(currentSlide+n);resetTimer();}
+let timer=setInterval(()=>showSlide(currentSlide+1),2500);
+function resetTimer(){clearInterval(timer);timer=setInterval(()=>showSlide(currentSlide+1),2500);}
+showSlide(0);
+const slider=document.getElementById('catalogSlider');
+slider.addEventListener('mouseenter',()=>clearInterval(timer));
+slider.addEventListener('mouseleave',()=>{timer=setInterval(()=>showSlide(currentSlide+1),2500);});
+</script>
+</body>
+</html>

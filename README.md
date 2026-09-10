@@ -1,15 +1,18 @@
-# IVA Agro Innovations - Static Website
+# IVA Agro Innovations website
 
-## Run locally
-Open `index.html` in a browser.
+Pages:
+- index.html — home/about/business portfolio
+- products.html — automatic product catalog slideshow (2.5 seconds)
+- contact.html — phone, WhatsApp, email and Google Maps link
+- style.css / script.js — site assets
+- assets/catalog — all 12 pages from the supplied catalog, optimized for web
 
-## Before publishing
-1. Replace the sample products in `script.js` with your real shop inventory.
-2. Add the exact shop address and your Google Maps Place URL in `index.html`.
-3. Confirm the phone/email details.
-4. Buy a domain such as `ivaagroinnovations.in` or `.com` if available.
-5. Upload the files to a static host such as GitHub Pages, Netlify, Vercel or your hosting provider.
-6. Add the final domain to Google Search Console and submit `sitemap.xml` after creating/updating it.
-7. Create/claim a Google Business Profile for the physical shop and keep its name, phone and address identical to the website.
+Before publishing:
+1. Replace the Google Maps search link in contact.html with the exact shop/place link.
+2. Add the real social media profile URLs/handles when available.
+3. Confirm the phone/email.
+4. Upload all files into the website root (for cPanel primary domain, normally public_html).
+5. Keep the directory structure intact.
+6. Submit sitemap.xml to Google Search Console after the domain is live.
 
-The site includes responsive design, product search/filtering, contact buttons, basic SEO metadata and LocalBusiness structured data.
+The catalog PDF was image-only; its readable content was used without inventing missing address/social details.
